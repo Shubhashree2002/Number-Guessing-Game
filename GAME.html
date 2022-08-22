@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> NUMBER GUESSING GAME</title>
+</head>
+<body>
+    <h1>Guess the number</h1>
+    <h2>We have selected a random number between 1 - 1000. 
+        See if you can guess it.</h2>
+          
+    <form name="frm">
+        enter a number
+        n1<input type="text" name="n1">
+        
+        <h1 id="res"></h1>
+         <input type="button" onclick="start()"value="start" id="btnstart"> 
+         <input type="button" id="btnguess" onclick="check()"value="Guess" disabled> 
+    </form>
+    
+</body>
+<script>
+     function start()
+     {
+        y = Math.ceil(Math.random() * 1000); 
+        document.getElementById("btnstart").disabled=true;
+        document.getElementById("btnguess").disabled=false;
+     }
+     n = 10;
+     function check()
+     {
+        x=frm.n1.value*1
+        n--;
+        if(x == y)
+        {
+            res = "CONGRATULATIONS!!! YOU WON THE GAME.";
+        }
+        else if(x > y) 
+        {
+            res = "OOPS SORRY!! TRY A SMALLER NUMBER. You have " + getfaces(n) + "chances left";
+        } 
+         else
+        {
+            res = "OOPS SORRY!! TRY A HIGHER NUMBER. You have " + getfaces(n) + "chances left";
+        }
+        document.getElementById("res").innerText=res;
+     }
+     function getfaces(x)
+     {
+         res ="";
+         for(i=1;i<=x;i++)
+            res = res + "😄";
+        return res;
+     }
+
+
+
+
+</script>
+</html>
+  
+  
+    
+ 
